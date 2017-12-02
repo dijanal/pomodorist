@@ -15,7 +15,7 @@ function longbreak()
     {
     if (timerOn === false) 
         {
-        window.setInterval(subtractOne, 1000);
+        setInterval(subtractOne, 1000);
         }
     minutesTens = 1;
     minutesOnes = 5;
@@ -34,12 +34,12 @@ function shortbreak()
     {
     if (timerOn === false)
         {
-        window.setInterval(subtractOne, 1000);
+        setInterval(subtractOne, 1000);
         }
     minutesTens = 0;
-    minutesOnes = 0;
+    minutesOnes = 5;
     secondsTens = 0;
-    secondsOnes = 3;
+    secondsOnes = 0;
     document.getElementById('sec-ones').innerHTML=secondsOnes;
     document.getElementById('sec-tens').innerHTML=secondsTens;
     document.getElementById('min-ones').innerHTML=minutesOnes;
@@ -53,7 +53,7 @@ function start()
     {
     if (timerOn === false)
         {
-        window.setInterval(subtractOne, 1000);
+        setInterval(subtractOne, 1000);
         }
     minutesTens = 2;
     minutesOnes = 5;
