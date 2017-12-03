@@ -83,7 +83,8 @@
 #clock {border-radius: 50%;
 width:230px;
 height:230px;
-background: linear-gradient(red, yellow);
+background: linear-gradient( #800000
+, #e6e6e6);
 }
 #link {
      display: flex;

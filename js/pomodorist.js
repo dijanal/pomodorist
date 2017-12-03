@@ -6,11 +6,6 @@ var minutesTens = 0;
 var timerOn = false;
 var timerJustStarted = true;
 
-
-
-    
-    
-
 function longbreak()
     {
     if (timerOn === false) 
