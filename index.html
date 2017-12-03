@@ -18,21 +18,26 @@
     <main>
     	
         <div id="button">
+        	<button  id="start"onclick= 'start()' >Start</button>
             <button type="text" id="short break" onclick='shortbreak()' >Short break</button>
             <button type="text" id="long break" onclick="longbreak()" >Long break</button>
+                        <button id="reset"onclick='reset()'>Reset</button>
+
         </div>
-        <div>
+       
             <div id="clockdiv" class="div1">
+            	<button id="clock">
                 <span id='min-tens' >2</span> 
                 <span id='min-ones'>5</span>
                 <span>:</span>
                 <span id='sec-tens'>0</span>
                 <span id='sec-ones'>0</span>
-            </div>
+            </button>
+           
         </div>
         <div id="controls">
-            <button  id="start"onclick= 'start()' >Start</button>
-            <button id="reset"onclick='reset()'>Reset</button>
+             
+            <p>About <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Pomodoro Technique.</a></p>
         </div>
         <audio id="alarm" src="alarm.mp3"></audio>
     </main>
