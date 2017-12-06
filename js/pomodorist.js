@@ -1,123 +1,44 @@
 
-var secondsOnes = 0;
-var secondsTens = 0;
-var minutesOnes = 0;
-var minutesTens = 0;
-var timerOn = false;
-var timerJustStarted = true;
+var display = document.getElementById('display');
+var time;
+var start;
 
-function longbreak()
-    {
-    if (timerOn === false) 
-        {
-        setInterval(subtractOne, 1000);
-        }
-    minutesTens = 1;
-    minutesOnes = 5;
-    secondsTens = 0;
-    secondsOnes = 0;
-    document.getElementById('sec-ones').innerHTML=secondsOnes;
-    document.getElementById('sec-tens').innerHTML=secondsTens;
-    document.getElementById('min-ones').innerHTML=minutesOnes;
-    document.getElementById('min-tens').innerHTML=minutesTens;
-        
-        
-    timerOn = true;
-    }
-    
-function shortbreak()
-    {
-    if (timerOn === false)
-        {
-        setInterval(subtractOne, 1000);
-        }
-    minutesTens = 0;
-    minutesOnes = 5;
-    secondsTens = 0;
-    secondsOnes = 0;
-    document.getElementById('sec-ones').innerHTML=secondsOnes;
-    document.getElementById('sec-tens').innerHTML=secondsTens;
-    document.getElementById('min-ones').innerHTML=minutesOnes;
-    document.getElementById('min-tens').innerHTML=minutesTens;
+function upload() {
 
-        
-    timerOn = true;
+    display.innerHTML = (Math.floor(time / 60) < 10 ? "0" : "") + Math.floor(time / 60) + ":" + (Math.floor(time % 60) < 10 ? "0" : "") + Math.floor(time % 60);
+
+}
+
+function countdown() {
+    time--;
+    upload();
+    if (time == 0) {
+        reset();
+        alarm.play();
     }
 
-function start()
-    {
-    if (timerOn === false)
-        {
-        setInterval(subtractOne, 1000);
-        }
-    minutesTens = 2;
-    minutesOnes = 5;
-    secondsTens = 0;
-    secondsOnes = 0;
-    document.getElementById('sec-ones').innerHTML=secondsOnes;
-    document.getElementById('sec-tens').innerHTML=secondsTens;
-    document.getElementById('min-ones').innerHTML=minutesOnes;
-    document.getElementById('min-tens').innerHTML=minutesTens;
+}
 
-        
-    timerOn = true;
-    }
- 
-    
-function secondsToMinutes()
-    {
-    if (minutesOnes === 0 && secondsOnes === 0 && secondsTens === 0)
-        {
-        minutesTens--;
-        minutesOnes = 10;
-        }
-    if (secondsTens === 0 && secondsOnes === 0)
-        {
-        minutesOnes--;
-        secondsTens = 6;
-        }
-    if ( secondsOnes === 0)
-        {
-        secondsTens--;
-        secondsOnes = 10;
-        }
-    }
-   
-function subtractOne()
-    {
-    if (timerOn && minutesTens === 0 && minutesOnes === 0 && secondsTens === 0 && secondsOnes === 0)
-    {
+function start() {
+    start = setInterval(countdown, 1000);
+    time = 1500;
+    upload();
+}
 
-    var alarm=document.getElementById('alarm')
-    addEventListener(alarm.play());
-    ;
+function shortbreak() {
+    start = setInterval(countdown, 1000);
+    time = 300;
+    upload();
+}
 
-    }
-    else if (timerJustStarted && secondsTens === 0 && secondsOnes === 0 && minutesOnes === 0)
-        {
-        minutesOnes = 9;
-        secondsTens = 5;
-        secondsOnes = 9;
-        minutesOnes--
-        timerJustStarted = false;
-        }
-    else if (timerJustStarted && secondsTens === 0 && secondsOnes === 0 && minutesOnes !== 0)
-        {
-        secondsTens = 5;
-        secondsOnes = 9;
-        minutesOnes--
-        timerJustStarted = false;
-        }
-    
-    document.getElementById('sec-ones').innerHTML=secondsOnes;
-    document.getElementById('sec-tens').innerHTML=secondsTens;
-    document.getElementById('min-ones').innerHTML=minutesOnes;
-    document.getElementById('min-tens').innerHTML=minutesTens;
-    secondsToMinutes(); 
-    secondsOnes--;
-    }
- 
-function reset()
-    {
-location.reload()
-    }
+function longbreak() {
+    start = setInterval(countdown, 1000);
+    time = 900;
+    upload();
+}
+
+function reset() {
+    clearInterval(start);
+    time = 0;
+    upload();
+}
