@@ -1,7 +1,7 @@
-
 var display = document.getElementById('display');
+
 var time;
-var start;
+var count;
 
 function upload() {
 
@@ -20,25 +20,29 @@ function countdown() {
 }
 
 function start() {
-    start = setInterval(countdown, 1000);
+    count = setInterval(countdown, 1000);
     time = 1500;
     upload();
+
 }
 
 function shortbreak() {
-    start = setInterval(countdown, 1000);
+    count = setInterval(countdown, 1000);
     time = 300;
     upload();
+
 }
 
 function longbreak() {
-    start = setInterval(countdown, 1000);
+    count = setInterval(countdown, 1000);
     time = 900;
     upload();
+
 }
 
 function reset() {
-    clearInterval(start);
+    clearInterval(count);
     time = 0;
     upload();
+
 }
