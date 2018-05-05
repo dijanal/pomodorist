@@ -8,38 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/pomodorist.css">
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <h1>Pomodoro timer </h1>
     </header>
-    <main>
-    	
+    <main>	
         <div id="button">
-        	<button  onclick= 'start()' >Start</button>
-            <button type="text"  onclick='shortbreak()' >Short break</button>
-            <button type="text"  onclick="longbreak()" >Long break</button>
-                        <button onclick='reset()'><i class="fa fa-stop"></i></button>
-
+        	<button  id="start"onclick= 'start()' title='Start'><i class="fas fa-play"></i></button>
+            <button type="text" id="short break" onclick='shortbreak()' title='Short break'><i class="fas fa-coffee"></i></button>
+            <button id="reset"onclick='reset()' title='Reset'><i class="fas fa-stop"></i></button>
         </div>
-       
-            <div id="clockdiv" class="div1">
-            	<button id="clock">
-            		<span id="display">00:00</span>
-              <!--   <span id='min-tens' >2</span> 
+        <div id="clockdiv" class="div1">
+            <button id="clock">
+                <span id='min-tens' >2</span> 
                 <span id='min-ones'>5</span>
                 <span>:</span>
                 <span id='sec-tens'>0</span>
-                <span id='sec-ones'>0</span> -->
+                <span id='sec-ones'>0</span>
             </button>
-           
         </div>
-        <div id="controls">
-             
+        <div id="controls">             
             <p>About <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Pomodoro Technique.</a></p>
         </div>
         <audio id="alarm" src="alarm.mp3"></audio>
