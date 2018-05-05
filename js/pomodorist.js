@@ -6,24 +6,7 @@ var minutesTens = 0;
 var timerOn = false;
 var timerJustStarted = true;
 
-function longbreak()
-    {
-    if (timerOn === false) 
-        {
-        setInterval(subtractOne, 1000);
-        }
-    minutesTens = 1;
-    minutesOnes = 5;
-    secondsTens = 0;
-    secondsOnes = 0;
-    document.getElementById('sec-ones').innerHTML=secondsOnes;
-    document.getElementById('sec-tens').innerHTML=secondsTens;
-    document.getElementById('min-ones').innerHTML=minutesOnes;
-    document.getElementById('min-tens').innerHTML=minutesTens;
-        
-        
-    timerOn = true;
-    }
+
     
 function shortbreak()
     {
